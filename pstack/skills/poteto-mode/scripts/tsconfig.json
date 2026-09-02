@@ -1,0 +1,8 @@
+{
+  "extends": "./watch-pr/tsconfig.json",
+  "include": [
+    "bootstrap.ts",
+    "orch/*.ts",
+    "watch-pr/*.ts"
+  ]
+}

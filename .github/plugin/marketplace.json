@@ -1,0 +1,24 @@
+{
+  "name": "pstack-copilot",
+  "owner": {
+    "name": "jlisam"
+  },
+  "metadata": {
+    "description": "A GitHub Copilot CLI port of pstack's rigorous engineering workflows.",
+    "version": "0.14.5-copilot.1"
+  },
+  "plugins": [
+    {
+      "name": "pstack-copilot",
+      "description": "A GitHub Copilot CLI port of pstack's rigorous engineering workflows.",
+      "version": "0.14.5-copilot.1",
+      "author": {
+        "name": "Lauren Tan"
+      },
+      "license": "MIT",
+      "homepage": "https://github.com/jlisam/pstack-copilot",
+      "repository": "https://github.com/jlisam/pstack-copilot",
+      "source": "./pstack"
+    }
+  ]
+}

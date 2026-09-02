@@ -1,0 +1,30 @@
+{
+  "name": "pstack-copilot",
+  "description": "A GitHub Copilot CLI port of pstack's rigorous engineering workflows.",
+  "version": "0.14.5-copilot.1",
+  "author": {
+    "name": "Lauren Tan"
+  },
+  "homepage": "https://github.com/jlisam/pstack-copilot",
+  "repository": "https://github.com/jlisam/pstack-copilot",
+  "license": "MIT",
+  "keywords": [
+    "pstack",
+    "poteto-mode",
+    "workflow",
+    "principles",
+    "agent-style",
+    "subagents",
+    "unslop",
+    "copilot-cli"
+  ],
+  "category": "developer-tools",
+  "tags": [
+    "workflow",
+    "principles",
+    "review",
+    "planning"
+  ],
+  "skills": "./skills/",
+  "agents": "./agents/"
+}
