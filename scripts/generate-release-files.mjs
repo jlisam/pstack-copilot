@@ -74,7 +74,14 @@ export function parsePluginManifest(text) {
 
 export function parseUpstreamProvenance(text) {
 	const upstream = parseObject(text, "upstream.json");
-	for (const key of ["repository", "path", "version", "commit", "licenseSha256"]) {
+	for (const key of [
+		"repository",
+		"path",
+		"author",
+		"version",
+		"commit",
+		"licenseSha256",
+	]) {
 		requireString(upstream, key, "upstream.json");
 	}
 	return upstream;
@@ -95,7 +102,10 @@ export function releaseIdentityProblems(plugin, upstream, licenseBytes) {
 	);
 	const checks = [
 		[plugin.name === "pstack-copilot", "plugin name must be pstack-copilot"],
-		[plugin.author.name === "Lauren Tan", "plugin author must be Lauren Tan"],
+		[
+			plugin.author.name === "Lauren Tan; Copilot port by jlisam",
+			"plugin author must credit Lauren Tan and the jlisam Copilot port",
+		],
 		[plugin.license === "MIT", "plugin license must be MIT"],
 		[plugin.homepage === PUBLIC_REPOSITORY, `plugin homepage must be ${PUBLIC_REPOSITORY}`],
 		[
@@ -113,6 +123,7 @@ export function releaseIdentityProblems(plugin, upstream, licenseBytes) {
 			"upstream repository must identify cursor/plugins",
 		],
 		[upstream.path === "pstack", "upstream path must be pstack"],
+		[upstream.author === "Lauren Tan", "upstream author must be Lauren Tan"],
 		[
 			/^\d+\.\d+\.\d+$/.test(upstream.version),
 			"upstream version must use major.minor.patch",
@@ -246,11 +257,11 @@ export function buildNotice(plugin, upstream) {
 
 ## Upstream authorship
 
-${plugin.author.name} authored [upstream pstack ${upstream.version}](${upstreamUrl}). The upstream work is available under the [MIT License](./LICENSE).
+${upstream.author} authored [upstream pstack ${upstream.version}](${upstreamUrl}). The upstream work is available under the [MIT License](./LICENSE).
 
 ## Port maintenance
 
-The [jlisam/pstack-copilot](${plugin.repository}) repository maintains the GitHub Copilot CLI adaptations. The adaptations are distributed under the same [MIT License](./LICENSE). This port is maintained independently. No endorsement by ${plugin.author.name}, Cursor, or other upstream contributors is implied.
+The [jlisam/pstack-copilot](${plugin.repository}) repository maintains the GitHub Copilot CLI adaptations. The adaptations are distributed under the same [MIT License](./LICENSE). This port is maintained independently. No endorsement by ${upstream.author}, Cursor, or other upstream contributors is implied.
 `;
 }
 

@@ -3,7 +3,7 @@
   "description": "A GitHub Copilot CLI port of pstack's rigorous engineering workflows.",
   "version": "0.14.5-copilot.1",
   "author": {
-    "name": "Lauren Tan"
+    "name": "Lauren Tan; Copilot port by jlisam"
   },
   "homepage": "https://github.com/jlisam/pstack-copilot",
   "repository": "https://github.com/jlisam/pstack-copilot",

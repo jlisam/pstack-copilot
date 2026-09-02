@@ -437,6 +437,7 @@ function main() {
 	if (identityProblems.length > 0) return reportFailures();
 	const upstreamKeys = Object.keys(upstream).sort(compareStrings);
 	const expectedUpstreamKeys = [
+		"author",
 		"commit",
 		"licenseSha256",
 		"path",

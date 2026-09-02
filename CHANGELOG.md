@@ -8,4 +8,5 @@
 - Isolated the poteto-mode tools (`orch`, `watch-pr`) in their own Bun package with tests and a typecheck.
 - Preserved upstream invocation controls for skills that should run only when explicitly selected.
 - Added a plain-text decision fallback for public Copilot CLI builds that do not expose `ask_user`.
+- Credited Lauren Tan as the original author and jlisam as the Copilot port maintainer in plugin metadata.
 - Omitted the upstream Cursor-only `.cursor-plugin/` package and Benny automation.
