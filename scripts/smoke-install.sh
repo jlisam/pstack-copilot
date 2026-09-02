@@ -32,3 +32,23 @@ grep -Fq "Installed $expected_skills skills." <<<"$install_output"
 plugin_list=$(copilot plugin list)
 printf '%s\n' "$plugin_list"
 grep -Fq "pstack-copilot@pstack-copilot (v$expected_version)" <<<"$plugin_list"
+
+copilot plugin update pstack-copilot@pstack-copilot
+uninstall_output=$(copilot plugin uninstall pstack-copilot@pstack-copilot)
+printf '%s\n' "$uninstall_output"
+if ! grep -Eq 'uninstalled|disabled' <<<"$uninstall_output"; then
+	echo "uninstall did not remove or disable the plugin" >&2
+	exit 1
+fi
+plugin_list=$(copilot plugin list)
+if grep -F "pstack-copilot@pstack-copilot" <<<"$plugin_list" |
+	grep -Fq "(enabled)"; then
+	echo "plugin remained enabled after uninstall" >&2
+	exit 1
+fi
+copilot plugin marketplace remove pstack-copilot --force
+plugin_list=$(copilot plugin list)
+if grep -Fq "pstack-copilot@pstack-copilot" <<<"$plugin_list"; then
+	echo "plugin remained registered after marketplace removal" >&2
+	exit 1
+fi

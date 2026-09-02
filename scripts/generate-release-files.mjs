@@ -180,6 +180,7 @@ export function buildInventory(files) {
 	const agents = [];
 	const executables = [];
 	const modelInvocationDisabled = [];
+	const playbooks = [];
 	const tests = [];
 
 	for (const file of files) {
@@ -192,6 +193,11 @@ export function buildInventory(files) {
 		const agentMatch = file.path.match(/^pstack\/agents\/([^/]+)\.agent\.md$/);
 		if (agentMatch) agents.push(agentMatch[1]);
 
+		const playbookMatch = file.path.match(
+			/^pstack\/skills\/poteto-mode\/playbooks\/([^/]+)\.md$/,
+		);
+		if (playbookMatch) playbooks.push(playbookMatch[1]);
+
 		if (file.shebang) executables.push(file.path);
 		if (/\.(?:test|spec)\.[^/]+$/.test(file.path)) tests.push(file.path);
 	}
@@ -201,6 +207,7 @@ export function buildInventory(files) {
 		agents: sortedUnique(agents),
 		executables: sortedUnique(executables),
 		modelInvocationDisabled: sortedUnique(modelInvocationDisabled),
+		playbooks: sortedUnique(playbooks),
 		tests: sortedUnique(tests),
 	};
 }

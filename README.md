@@ -1,6 +1,6 @@
 # pstack-copilot
 
-`pstack-copilot` packages Lauren Tan's pstack workflows for GitHub Copilot CLI. It ships 45 skills and two agents. `/poteto-mode` is the entry point, and it routes a task to one of 22 playbooks. The installed files stay under [`pstack/`](./pstack/).
+`pstack-copilot` packages Lauren Tan's pstack workflows for GitHub Copilot CLI. It ships 45 skills, two agents, and 23 playbook files. `/poteto-mode` routes tasks through 22 task playbooks. The shared Opening a PR playbook handles delivery. The installed files stay under [`pstack/`](./pstack/).
 
 This is an unofficial port. It is based on [upstream pstack 0.14.5](https://github.com/cursor/plugins/tree/b9ddc83c32972210b8a94d389130713e8eed346e/pstack) and is maintained independently.
 
@@ -43,7 +43,7 @@ Refresh the marketplace, then update the plugin:
 
 ```bash
 copilot plugin marketplace update pstack-copilot
-copilot plugin update pstack-copilot
+copilot plugin update pstack-copilot@pstack-copilot
 ```
 
 ## Uninstall
@@ -51,7 +51,7 @@ copilot plugin update pstack-copilot
 Remove the plugin and its marketplace registration:
 
 ```bash
-copilot plugin uninstall pstack-copilot
+copilot plugin uninstall pstack-copilot@pstack-copilot
 copilot plugin marketplace remove pstack-copilot
 ```
 

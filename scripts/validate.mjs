@@ -393,6 +393,15 @@ function validateInstallCommands(root, plugin) {
 			fail(`${relativePath} does not contain the canonical public install commands`);
 		}
 	}
+	const rootReadme = readFileSync(path.join(root, "README.md"), "utf8");
+	for (const command of [
+		`copilot plugin update ${plugin.name}@${plugin.name}`,
+		`copilot plugin uninstall ${plugin.name}@${plugin.name}`,
+	]) {
+		if (!rootReadme.includes(command)) {
+			fail(`README.md does not contain canonical command ${command}`);
+		}
+	}
 }
 
 function main() {
@@ -464,6 +473,7 @@ function main() {
 				"agents",
 				"executables",
 				"modelInvocationDisabled",
+				"playbooks",
 				"skills",
 				"tests",
 			])
