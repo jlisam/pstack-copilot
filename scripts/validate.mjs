@@ -485,6 +485,11 @@ function main() {
 			fail("inventory.json does not exactly match the public tree");
 		}
 	}
+	if (inventory.modelInvocationDisabled.includes("poteto-mode")) {
+		fail(
+			"poteto-mode must remain model-invocable because pstack-copilot:poteto-agent loads it through the skill tool",
+		);
+	}
 
 	const skillDirectory = path.join(REPOSITORY_ROOT, "pstack/skills");
 	const skillNames = readdirSync(skillDirectory, { withFileTypes: true })

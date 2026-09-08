@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.14.5-copilot.2 - 2026-09-08
+
+- Made `poteto-mode` available to the model-facing skill tool so `pstack-copilot:poteto-agent` can load it.
+- Added a release validation guard for the custom agent's skill dependency.
+
 ## 0.14.5-copilot.1 - 2026-09-02
 
 - Published the initial standalone GitHub Copilot CLI port. Tested with Copilot CLI 1.0.83.
