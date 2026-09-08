@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.14.5-copilot.3 - 2026-09-08
+
+- Made every skill used by pstack's internal workflows available to the model-facing skill tool.
+- Kept seven user-only entry skills explicitly invocation-only.
+- Added a release validation guard for the complete skill invocation policy.
+
 ## 0.14.5-copilot.2 - 2026-09-08
 
 - Made `poteto-mode` available to the model-facing skill tool so `pstack-copilot:poteto-agent` can load it.

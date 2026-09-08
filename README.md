@@ -61,7 +61,7 @@ copilot plugin marketplace remove pstack-copilot
 - The upstream Cursor-only `.cursor-plugin/` package and Benny automation are not shipped.
 - Task delegation uses namespaced plugin agents such as `pstack-copilot:poteto-agent` only when the active task schema exposes them. Otherwise it falls back to the built-in agent types.
 - Skills use the structured `ask_user` tool when the active CLI exposes it. Older CLIs get the same approval gate as a plain-text question.
-- Skills that require explicit invocation keep upstream's `disable-model-invocation` control.
+- Internally composed workflow skills stay available to the model-facing skill tool. Seven user-only entry skills retain `disable-model-invocation`.
 - Model choices live in `~/.copilot/instructions/pstack-models.instructions.md` after `/setup-pstack`.
 
 ## Contribute
