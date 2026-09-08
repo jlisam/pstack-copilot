@@ -1,6 +1,6 @@
 # Notice
 
-`pstack-copilot` version `0.14.5-copilot.2` is an unofficial GitHub Copilot CLI port of pstack.
+`pstack-copilot` version `0.14.5-copilot.3` is an unofficial GitHub Copilot CLI port of pstack.
 
 ## Upstream authorship
 

@@ -22,6 +22,15 @@ export const GENERATED_PATHS = Object.freeze([
 	"NOTICE.md",
 	"pstack/NOTICE.md",
 ]);
+export const EXPLICIT_ONLY_SKILLS = Object.freeze([
+	"automate-me",
+	"blast-radius",
+	"bro",
+	"maintain-verification-skill",
+	"recall",
+	"reflect",
+	"teach",
+]);
 
 const PUBLIC_REPOSITORY = "https://github.com/jlisam/pstack-copilot";
 const UPSTREAM_REPOSITORY = "https://github.com/cursor/plugins";

@@ -1,7 +1,6 @@
 ---
 name: no-comments
 description: "Run the Comment Sicko policy through a supported Copilot task, fix accepted findings, and offer encodings for claimed constraints."
-disable-model-invocation: true
 ---
 
 # No comments

@@ -11,6 +11,7 @@ import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import {
 	REPOSITORY_ROOT,
+	EXPLICIT_ONLY_SKILLS,
 	buildExpectedReleaseFiles,
 	buildInventory,
 	generatedFileProblems,
@@ -485,9 +486,14 @@ function main() {
 			fail("inventory.json does not exactly match the public tree");
 		}
 	}
-	if (inventory.modelInvocationDisabled.includes("poteto-mode")) {
+	if (
+		!arraysEqual(
+			inventory.modelInvocationDisabled,
+			[...EXPLICIT_ONLY_SKILLS].sort(compareStrings),
+		)
+	) {
 		fail(
-			"poteto-mode must remain model-invocable because pstack-copilot:poteto-agent loads it through the skill tool",
+			`model-invocation-disabled skills must be exactly ${EXPLICIT_ONLY_SKILLS.join(", ")}`,
 		);
 	}
 
