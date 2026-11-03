@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.14.5-copilot.4 - 2026-11-03
+
+- Applied `principle-laziness-protocol` to every code change, and added rules against unrequested options, line-for-line ports, unmeasured algorithms, golden and parity tests, and unclear names.
+- Added a `poteto-mode` trigger that cuts every code change down per `principle-laziness-protocol` before you present it.
+
 ## 0.14.5-copilot.3 - 2026-09-08
 
 - Made every skill used by pstack's internal workflows available to the model-facing skill tool.
